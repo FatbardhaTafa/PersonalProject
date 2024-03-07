@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Nutrient</title>
+	<link href="/static/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/static/css/style.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="/static/css/font-awesome.min.css" />
+	<link href="/static/css/element.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Geostar+Fill|Leckerli+One|Montez" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet">
+	<script src="/static/js/jquery-2.1.1.min.js"></script>
+	<script src="/static/js/bootstrap.min.js"></script>
+
+</head>
+<style>
+	.comment-box {
+		background-color: #f9f9f9;
+		border: 1px solid #ddd;
+		border-radius: 5px;
+		padding: 15px;
+	}
+
+	.comment-header {
+		margin-bottom: 10px;
+	}
+
+	.con {
+		margin-right: 120px;
+
+	}
+
+	.comment-time {
+		color: #999;
+		font-size: 12px;
+	}
+
+	.comment-content {
+		font-size: 14px;
+		line-height: 1.6;
+	}
+</style>
+
+<body>
+	<section id="header" class="header_menu">
+		<nav class="navbar navbar-default navbar-fixed-top">
+			<div class="container">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header page-scroll">
+					<button type="button" class="navbar-toggle" data-toggle="collapse"
+						data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand heading_tag" href="/">With Love </a>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav navbar-right">
+						<li>
+							<a class="tag_menu" href="/">HOME</a>
+						</li>
+
+						<li>
+							<a class="tag_menu" href="/about">ABOUT</a>
+						</li>
+
+						<li>
+							<a class="tag_menu" href="/favourite">FAVOURITE</a>
+						</li>
+
+						<li>
+							<a class="tag_menu active_tab" href="/recipes/show/">DETAIL</a>
+						</li>
+
+						<li>
+							<a class="tag_menu" href="/all/recipes">RECIPES</a>
+						</li>
+
+						<li>
+							<a class="tag_menu" href="/recipes/new">ADD RECIPE</a>
+						</li>
+
+						<li>
+							<a class="tag_menu" href="/contact">CONTACT</a>
+						</li>
+
+						<li class="dropdown">
+							<a class="tag_menu" href="#" data-toggle="dropdown" role="button"
+								aria-expanded="false">MORE<span class="caret"></span></a>
+							<ul class="dropdown-menu drop_1" role="menu">
+								<li><a href="/">Home</a></li>
+								<li><a href="/all/recipes">Recipes</a></li>
+								<li><a href="/logout">Logout</a></li>
+							</ul>
+						</li>
+
+					</ul>
+
+				</div>
+				<!-- /.navbar-collapse -->
+			</div>
+			<!-- /.container-fluid -->
+		</nav>
+	</section>
+
+	<section id="header_mini">
+		<div class="container">
+			<div class="row">
+				<div class="header_mini clearfix">
+					<h1><a class="heading_tag" href="/">With Love</a></h1>
+				</div>
+				<a id="menu-toggle" href="#" class="btn btn-warning btn-lg toggle"><i class="fa fa-toggle-on"></i></a>
+
+				<div id="sidebar-wrapper" class="">
+					<ul class="sidebar-nav">
+						<a id="menu-close" href="#" class="btn btn-default btn-lg pull-right toggle"><i
+								class="fa fa-remove"></i></a>
+						<li class="sidebar-brand">
+							<a class="heading_tag" href="/">With Love</a>
+						</li>
+						<li>
+							<a class="tag_menu" href="/">HOME</a>
+						</li>
+
+						<li>
+							<a class="tag_menu" href="/about">ABOUT</a>
+						</li>
+
+						<li>
+							<a class="tag_menu" href="/favourite">FAVOURITE</a>
+						</li>
+
+						<li>
+							<a class="tag_menu active_tab" href="/recipes/show/">DETAIL</a>
+						</li>
+
+						<li>
+							<a class="tag_menu" href="/all/recipes">RECIPES</a>
+						</li>
+
+						<li>
+							<a class="tag_menu" href="/recipes/new">ADD RECIPE</a>
+						</li>
+
+						<li>
+							<a class="tag_menu" href="team.html">TEAM</a>
+						</li>
+
+						<li>
+							<a class="tag_menu" href="/contact">CONTACT</a>
+						</li>
+
+						<li class="dropdown">
+							<a class="tag_menu" href="#" data-toggle="dropdown" role="button"
+								aria-expanded="false">MORE<span class="caret"></span></a>
+							<ul class="dropdown-menu drop_1" role="menu">
+								<li><a href="/">Home</a></li>
+								<li><a href="/all/recipes">Recipes</a></li>
+								<li><a href="/logout">Logout</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+	<section id="blog">
+		<div class="container">
+			<div class="row">
+				<div class="menu_1 clearfix text-center">
+					<h1>Detail</h1>
+				</div>
+				<div class="blog clearfix">
+					<div class="col-sm-9">
+						<div class="blog_left">
+							<h4>{{recipe.name}}</h4>
+							<h5><i class="fa fa-calendar"></i>{{ recipe.created_at }}</h5>
+							<div class="card-image"><img
+									src=" {{ url_for('static', filename='images/' + recipe.photo) }} " width="50%">
+							</div>
+							<h3 class="heading_1">Ingredients: </h3>
+							<p>{{recipe.ingredients}}</p>
+							<h3 class="heading_1">Description:</h3>
+							<p>{{recipe.description}}</p>
+							<h3 class="heading_1">Instructions:</h3>
+							<p>{{recipe.instructions}}</p>
+							<h3 class="heading_1">Difficulty_level:</h3>
+							<p>{{recipe.difficulty_level}}</p>
+							<h3 class="heading_1">Under 30 minutes?</h3>
+							<p>{{recipe.under_30}}</p>
+							<h3 class="heading_1">Calories:</h3>
+							<p>{{recipe.calories}}</p>
+							<h3 class="heading_1">Notes:</h3>
+							<p>{{recipe.notes}}</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	<section id="add-comment">
+		<div class=" con container">
+			<div class="row">
+				<div class="comment clearfix">
+					<p>Likes: <span id="likesCount">{{ get_likes_count(recipe.id) }}</span></p>
+					<div>
+						<a href="#" onclick="toggleLike({{ recipe.id }})">
+							<i id="likeIcon"
+								class="fa fa-heart{% if session['user_id'] in get_users_who_liked(recipe.id) %} liked{% else %}-o{% endif %}"></i>
+						</a>
+					</div>
+
+
+					<div class="usersWhoLiked">
+						{% for user in get_users_who_liked(recipe.id) %}
+						<p>{{ user.first_name }} {{ user.last_name }}</p>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<br><br>
+	<section id="comments">
+		<div class="container">
+			<div class="row">
+				<div class="comment clearfix">
+					{% for one_comment in recipe.commentss %}
+					<div class="col-md-12">
+						<div class="comment-box mb-4">
+							<div class="comment-header">
+								<strong>{{ one_comment.first_name }} {{ one_comment.last_name }}</strong>
+								<span class="comment-time">{{ one_comment.created_at.strftime('%H:%M %p on %d %B %Y')
+									}}</span>
+								{% if one_comment.user_id == session['user_id'] %}
+								<a href="/delete/comment/{{ one_comment.id }}"
+									class="btn btn-sm btn-danger float-right">Delete</a>
+								{% endif %}
+							</div>
+							<div class="comment-content ml-2">
+								<p>{{ one_comment.comment }}</p>
+							</div>
+						</div>
+					</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="add-comment">
+		<div class="container">
+			<div class="row">
+				<div class="comment clearfix">
+					<form action="/add/comment/{{recipe.id}}" method="POST">
+						<label for="comment">Post a comment:</label>
+						<textarea class="form-control" name="comment" id="comment" cols="20" rows="3"
+							required></textarea>
+						{% with messages = get_flashed_messages(category_filter=["comment"]) %}
+						{% if messages %}
+
+						{% for message in messages %}
+						<p class="text-danger text-center">{{ message }}</p>
+						{% endfor %}
+
+						{% endif %}
+						{% endwith %}
+						<button class="btn btn-success mt-2">Add</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section><br><br>
+
+	<div class="container text-center">
+		<a href="/download/recipe/{{recipe.id}}" class="btn btn-danger">DOWNLOAD</a>
+	</div><br><br>
+
+	</div>
+
+</body>
+
+<script>
+	function toggleLike(recipeId) {
+		var likeIcon = document.getElementById('likeIcon');
+		var likesCount = document.getElementById('likesCount');
+		var likes = parseInt(likesCount.innerText);
+
+		if (!likeIcon.classList.contains('liked')) {
+			addLike(recipeId);
+			likeIcon.classList.add('liked');
+			likeIcon.classList.remove('fa-heart-o');
+			likesCount.innerText = likes + 1;
+		} else {
+			removeLike(recipeId);
+			likeIcon.classList.remove('liked');
+			likeIcon.classList.add('fa-heart-o');
+			likesCount.innerText = likes - 1;
+		}
+	}
+
+	function addLike(recipeId) {
+		fetch('/add/like/' + recipeId)
+			.then(response => {
+				if (response.ok) {
+					return response.json();
+				}
+				throw new Error('Network response was not ok.');
+			})
+			.then(data => {
+				console.log('Like added successfully:', data);
+			})
+			.catch(error => {
+				console.error('Error adding like:', error);
+			});
+	}
+
+	function removeLike(recipeId) {
+		fetch('/remove/like/' + recipeId)
+			.then(response => {
+				if (response.ok) {
+					return response.json();
+				}
+				throw new Error('Network response was not ok.');
+			})
+			.then(data => {
+				console.log('Like removed successfully:', data);
+			})
+			.catch(error => {
+				console.error('Error removing like:', error);
+			});
+	}
+
+
+
+
+</script>
+
+
+<section id="contact_home" class="clearfix">
+	<div class="contact_home clearfix">
+		<div class="col-sm-6 space_all">
+			<div class="contact_home_left">
+				<iframe
+					src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1236948.6091408293!2d20.799066097263426!3d41.3312033755865!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x135cf210e280dbd7%3A0x500a571620cd6f0!2sAlbania!5e0!3m2!1sen!2sin!4v1646660521586"
+					width="100%" height="550px" frameborder="0" style="border:0" allowfullscreen=""></iframe>
+			</div>
+		</div>
+
+		<div class="col-sm-6 space_all">
+			<div class="contact_home_right clearfix">
+				<h3 class="heading_tag">Connect with Us</h3>
+				<h3 class="heading_tag">Share Your Recipes!</h3>
+				<p class="text-muted">Join our community and share your favorite recipes with food enthusiasts from
+					around the world.</p>
+				<div class="contact_home_right_inner clearfix">
+					<ul class="social-network social-circle">
+						<!-- You can keep or remove social media icons based on your preference -->
+						<li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+						<li><a href="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+						<li><a href="#" class="icoInstagram" title="Instagram"><i class="fa fa-instagram"></i></a></li>
+						<li><a href="#" class="icoPinterest" title="Pinterest"><i class="fa fa-pinterest"></i></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</section>
+
+<section id="footer">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="footer text-center">
+					<p> © 2024 With Love. All Rights Reserved . </p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<script src="js/classie.js"></script>
+
+<script src="js/cbpAnimatedHeader.js"></script>
+
+<script type="text/javascript">
+	$("#menu-close").click(function (e) {
+		e.preventDefault();
+		$("#sidebar-wrapper").toggleClass("active");
+	});
+	$("#menu-toggle").click(function (e) {
+		e.preventDefault();
+		$("#sidebar-wrapper").toggleClass("active");
+	});
+</script>
+
+</body>
+
+</html>

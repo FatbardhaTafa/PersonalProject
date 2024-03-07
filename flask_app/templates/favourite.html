@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Nutrient</title>
+	<link href="/static/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/static/css/style.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="/static/css/font-awesome.min.css" />
+	<link href="/static/css/element.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Geostar+Fill|Leckerli+One|Montez" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet">
+	<script src="/static/js/jquery-2.1.1.min.js"></script>
+	<script src="/static/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+	<section id="header" class="header_menu">
+		<nav class="navbar navbar-default navbar-fixed-top">
+			<div class="container">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header page-scroll">
+					<button type="button" class="navbar-toggle" data-toggle="collapse"
+						data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand heading_tag" href="/">With Love </a>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav navbar-right">
+						<li>
+							<a class="tag_menu" href="/">HOME</a>
+						</li>
+
+						<li>
+							<a class="tag_menu" href="/about">ABOUT</a>
+						</li>
+
+						<li>
+							<a class="tag_menu active_tab" href="/favourite">FAVOURITE</a>
+						</li>
+
+
+						<li>
+							<a class="tag_menu" href="/all/recipes">RECIPES</a>
+						</li>
+
+						<li>
+							<a class="tag_menu" href="/recipes/new">ADD RECIPE</a>
+						</li>
+
+						<li>
+							<a class="tag_menu" href="/contact">CONTACT</a>
+						</li>
+
+						<li class="dropdown">
+							<a class="tag_menu" href="detail.html" data-toggle="dropdown" role="button"
+								aria-expanded="false">MORE<span class="caret"></span></a>
+							<ul class="dropdown-menu drop_1" role="menu">
+								<li><a href="/">Home</a></li>
+								<li><a href="/all/recipes">Recipes</a></li>
+								<li><a href="/logout">Logout</a></li>
+							</ul>
+						</li>
+
+					</ul>
+
+				</div>
+				<!-- /.navbar-collapse -->
+			</div>
+			<!-- /.container-fluid -->
+		</nav>
+	</section>
+
+	<section id="header_mini">
+		<div class="container">
+			<div class="row">
+				<div class="header_mini clearfix">
+					<h1><a class="heading_tag" href="/">With Love</a></h1>
+				</div>
+				<a id="menu-toggle" href="detail.html" class="btn btn-warning btn-lg toggle"><i
+						class="fa fa-toggle-on"></i></a>
+
+				<div id="sidebar-wrapper" class="">
+					<ul class="sidebar-nav">
+						<a id="menu-close" href="detail.html" class="btn btn-default btn-lg pull-right toggle"><i
+								class="fa fa-remove"></i></a>
+						<li class="sidebar-brand">
+							<a class="heading_tag" href="/">With Love</a>
+						</li>
+						<li>
+							<a class="tag_menu" href="/">HOME</a>
+						</li>
+
+						<li>
+							<a class="tag_menu" href="/about">ABOUT</a>
+						</li>
+
+						<li>
+							<a class="tag_menu active_tab" href="/favourite">FAVOURITE</a>
+						</li>
+
+
+						<li>
+							<a class="tag_menu" href="/all/recipes">RECIPES</a>
+						</li>
+
+						<li>
+							<a class="tag_menu" href="/recipes/new">ADD RECIPE</a>
+						</li>
+
+						<li>
+							<a class="tag_menu" href="/contact">CONTACT</a>
+						</li>
+
+						<li class="dropdown">
+							<a class="tag_menu" href="detail.html" data-toggle="dropdown" role="button"
+								aria-expanded="false">MORE<span class="caret"></span></a>
+							<ul class="dropdown-menu drop_1" role="menu">
+								<li><a href="/">Home</a></li>
+								<li><a href="/all/recipes">Recipes</a></li>
+								<li><a href="/logout">Logout</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+	<section id="blog">
+		<div class="container">
+			<div class="row">
+				<div class="menu_1 clearfix text-center">
+					<h1>My Favourite List</h1>
+				</div>
+				<div class="blog clearfix">
+					<div class="col-sm-9">
+						<div class="blog_left clearfix">
+							{% for recipe in liked_recipes %}
+							<h4><a href="detail.html">{{recipe.name }}</a></h4>
+							<h5><i class="fa fa-calendar"></i>{{recipe.created_at}}</h5>
+							<div class="card-image clearfix"><img
+									src="{{ url_for('static', filename='images/' + recipe.photo) }}" width="100%"
+									height="450px"></div>
+							<p> {{recipe.description}}</p>
+							<h3><a href="/recipes/show/{{ recipe.id }}">READ MORE</a></h3>
+							{% endfor %}
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="blog_right">
+							<h4>LATEST BLOGS</h4>
+							<div class="card-image">
+								<img src="/static/img/23.jpg" width="100%">
+							</div>
+							<h5 class="heading_tag"><a href="detail.html">CONUBIA NOSTRA DOLOR SIT AMET, CONSECTETUR
+									ADIPISCING</a></h5>
+						</div>
+						<div class="blog_right">
+							<div class="card-image">
+								<img src="/static/img/24.jpg" width="100%">
+							</div>
+							<h5 class="heading_tag"><a href="detail.html">POPULAR OF THE FOOD WORLD</a></h5>
+						</div>
+						<div class="blog_right">
+							<div class="card-image">
+								<img src="/static/img/25.jpg" width="100%">
+							</div>
+							<h5 class="heading_tag"><a href="detail.html">LITORA TORQENT PER CONUBIA NOSTRA</a></h5>
+						</div>
+						<div class="blog_right">
+							<div class="card-image">
+								<img src="/static/img/26.jpg" width="100%">
+							</div>
+							<h5 class="heading_tag"><a href="detail.html">THE MAIN AIM OF THE FOOD WORLD</a></h5>
+						</div>
+						<div class="blog_right">
+							<div class="card-image">
+								<img src="/static/img/27.jpg" width="100%">
+							</div>
+							<h5 class="heading_tag"><a href="detail.html">PRAESENT LIBERO CONSECTETUR ADIPISCING ELIT
+									DOLOR SIT AMET ELIT INTEGER NEC ODIO </a></h5>
+						</div>
+
+						<div class="blog_right">
+							<div class="card-image">
+								<img src="/static/img/28.jpg" width="100%">
+							</div>
+							<h5 class="heading_tag"><a href="detail.html">LITORA TORQENT PER CONUBIA NOSTRA</a></h5>
+						</div>
+						<div class="blog_right_inner_4 clearfix">
+							<h4> Newsletter Subscriber</h4>
+							<p> Mauris massa vestibulum lacinia arcu eget nulla.Class aptent taciti sociosqu ad litora
+								torquent per conubia nostra,</p>
+							<input class="form-control" placeholder="Email" type="text">
+							<span><a href="detail.html">Sign Up</a></span>
+							<h5>We take care about privacy privacy!</h5>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="contact_home" class="clearfix">
+		<div class="contact_home clearfix">
+			<div class="col-sm-6 space_all">
+				<div class="contact_home_left">
+					<iframe
+						src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1236948.6091408293!2d20.799066097263426!3d41.3312033755865!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x135cf210e280dbd7%3A0x500a571620cd6f0!2sAlbania!5e0!3m2!1sen!2sin!4v1646660521586"
+						width="100%" height="550px" frameborder="0" style="border:0" allowfullscreen=""></iframe>
+				</div>
+			</div>
+
+			<div class="col-sm-6 space_all">
+				<div class="contact_home_right clearfix">
+					<h3 class="heading_tag">Connect with Us</h3>
+					<h3 class="heading_tag">Share Your Recipes!</h3>
+					<p class="text-muted">Join our community and share your favorite recipes with food enthusiasts from
+						around the world.</p>
+					<div class="contact_home_right_inner clearfix">
+						<ul class="social-network social-circle">
+							<!-- You can keep or remove social media icons based on your preference -->
+							<li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+							<li><a href="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+							<li><a href="#" class="icoInstagram" title="Instagram"><i class="fa fa-instagram"></i></a>
+							</li>
+							<li><a href="#" class="icoPinterest" title="Pinterest"><i class="fa fa-pinterest"></i></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</section>
+
+	<section id="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="footer text-center">
+						<p> © 2024 With Love. All Rights Reserved .</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script src="js/classie.js"></script>
+
+	<script src="js/cbpAnimatedHeader.js"></script>
+
+	<script type="text/javascript">
+		$("#menu-close").click(function (e) {
+			e.preventDefault();
+			$("#sidebar-wrapper").toggleClass("active");
+		});
+		$("#menu-toggle").click(function (e) {
+			e.preventDefault();
+			$("#sidebar-wrapper").toggleClass("active");
+		});
+	</script>
+
+</body>
+
+</html>
