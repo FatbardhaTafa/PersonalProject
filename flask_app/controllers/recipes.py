@@ -375,3 +375,188 @@ def contact():
 
 
 
+
+# Data for recipe suggestions
+recipes = [
+    {
+        "title": "Pite me Mish",
+        "description": "Pite tradicionale shqiptare me mish dhe perime.",
+        "image": "https://travelfoodatlas.com/wp-content/uploads/2023/11/Pite-Me-Mish.jpg",
+        "url": "https://www.youtube.com/watch?v=RGr66fpnJ5w"
+    },
+    {
+        "title": "Tavë Kosi",
+        "description": "Recetë e thjeshtë dhe e shijshme e tavës së kosit.",
+        "image": "https://www.mygoldenpear.com/wp-content/uploads/Tave-Kosi-recipe-joghurt.jpg",
+        "url": "https://www.youtube.com/results?search_query=tave+kosi"
+    },
+    {
+        "title": "Flija",
+        "description": "Recetë tradicionale shqiptare e ëmbël dhe e shijshme.",
+        "image": "https://www.artigatimit.com/wp-content/uploads/2017/02/flija-receta-gatimi-kuzhina-kosovare.jpg",
+        "url": "https://www.google.com/search?q=flija&rlz=1C1KNTJ_enAL1033AL1033&oq=flija&gs_lcrp=EgZjaHJvbWUqCggAEAAY4wIYgAQyCggAEAAY4wIYgAQyBwgBEC4YgAQyBwgCEAAYgAQyBwgDEAAYgAQyBwgEEAAYgAQyBwgFEAAYgAQyBwgGEAAYgAQyBwgHEAAYgAQyDwgIEC4YChjHARjRAxiABDIHCAkQABiABNIBCDUyNzlqMGo0qAIIsAIB&sourceid=chrome&ie=UTF-8#fpstate=ive&vld=cid:e90debb3,vid:1fPmnJREVVM,st:0"
+    },
+    {
+        "title": "Byrek me Mish",
+        "description": "Byrek tradicional shqiptar me mish dhe përime.",
+        "image": "https://media.sot.com.al/sot.com.al/media/-800-0-5fdc2fe672af888bdc20f425baa00461.jpg",
+        "url": "https://www.youtube.com/watch?app=desktop&v=sM92rYfs9iM"
+    },
+    {
+        "title": "Qofte të Fërguara",
+        "description": "Qofte të shijshme te bera plot dashuri dhe  të pjekura në furrë.",
+        "image": "https://www.myalbanianfood.com/wp-content/uploads/2017/03/Albanian-Qofte-1300x731.jpg",
+        "url": "https://www.youtube.com/watch?v=4-m9U4R013c"
+    },
+    {
+        "title": "Speca të Mbushur",
+        "description": "Speca të mbushur me mish dhe oriz, një pjatë e shijshme dhe e shëndetshme.",
+        "image": "https://unegatuaj.com/wp-content/uploads/2014/07/Speca-te-mbushur.jpg",
+        "url": "https://www.youtube.com/watch?v=003_vvubQz8"
+    },
+    {
+        "title": "Trileçe",
+        "description": "Trileçe është një embëlsirë e përbërë prej tre lloje mishi dhe e shtruar me sheqer dhe qumësht të kondensuar.",
+        "image": "https://photo.foodgawker.com/wp-content/uploads/2021/11/3778230.jpg",
+        "url": "https://www.youtube.com/watch?v=J7CkpI62OnU"
+    },
+    {
+        "title": "Revani",
+        "description": "Revani është një embëlsirë tradicionale shqiptare e përgatitur me miell, sheqer, qumësht dhe hudhër.",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStOTJxDe2ZHW5efCLHWst9uWI1-jhGG6IuatYNhgqokA&s",
+        "url": "https://www.youtube.com/watch?v=KtRA5Xz9OAw"
+    },
+    {
+        "title": "Bakllava",
+        "description": "Bakllava është një embëlsirë e njohur, e përgatitur me fleta të holla të brumëzura dhe të mbushura me arra të grira .",
+        "image": "https://www.artigatimit.com/wp-content/uploads/2020/12/bakllava-arra-receta-tradicionale-shqiptare-artigatimit-500x500.jpg",
+        "url": "https://www.youtube.com/watch?v=D8RliYObRwU"
+    },
+    {
+        "title": "Kungull me Oriz",
+        "description": "Kungulli i mbushur me oriz dhe perime është një zgjedhje e shijshme dhe e shëndetshme për sezonin e vjeshtës.",
+        "image": "https://gati.me/images/cropped-kunguj.PNG",
+        "url": "https://www.youtube.com/watch?v=LCQdnlEIweA"
+    },
+    {
+        "title": "Ballokume",
+        "description": "Ballokume është një embëlsirë tradicionale shqiptare e pjekur me miell, mjaltë dhe gjalpë.",
+        "image": "https://travelfoodatlas.com/wp-content/uploads/2021/06/Ballokume.jpg",
+        "url": "https://www.youtube.com/watch?v=rHaG_eghlyY"
+    },
+    {
+    "title": "Tiramisu",
+    "description": "Tiramisu është një embëlsirë italiane e shijshme, e përgatitur me keksa, kafe, krem mascarpone dhe kakaon e pluhur.",
+    "image": "https://www.gimmesomeoven.com/wp-content/uploads/2020/07/Tiramisu-Recipe-Cover.jpg",
+    "url": "https://youtube.com/watch?v=7VTtenyKRg4"
+    },
+    {
+        "title": "Tave Dheu",
+        "description": "Tavë Dheu është një pjatë tradicionale shqiptare e përgatitur me mish të pjekur, perime dhe mjaltë.",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFoCn7ATyOsBcl67ZlYLiXyFuDSWuJ2UqWafXw1awFwg&s",
+        "url": "https://www.youtube.com/watch?v=eUeBi_kZ5lo"
+    },
+    {
+        "title": "Fergesë",
+        "description": "Fergesë është një pjatë e thjeshtë dhe e shijshme me spec të kuq, domate, dhe djathë.",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBLRHPjoNsPXA4xaffpcylBEUUxFvJIrz4vQBW6NUuMg&s",
+        "url": "https://www.youtube.com/watch?v=1DJojddai2o"
+    },
+    {
+        "title": "Pite me Gjize",
+        "description": "Pite me Gjize është një pite dhe ushqim  tradicionale shqiptare e përgatitur me gjizë dhe veze.",
+        "image": "https://i.ytimg.com/vi/jUpqyVCTsrY/maxresdefault.jpg",
+        "url": "https://www.youtube.com/watch?v=s47LgEipo8c"
+    },
+    {
+        "title": "Japrak",
+        "description": "Japrak janë gjethe të pjekura me një mbushje të përzier me oriz dhe mish të pjekur, shpesh të servirura me qumësht .",
+        "image": "https://www.artigatimit.com/wp-content/uploads/2016/05/receta-gatimi-japrak-kuzhina-shqiptare-artigatimit-shqip-shije.jpg",
+        "url": "https://www.youtube.com/watch?v=nycD_M-Cm40"
+    },
+     {
+        "title": "Tavë Kosi me Mish",
+        "description": "Tavë Kosi me Mish është një version i tavës së kosit me shtimin e mishit të pjekur në furrë.",
+        "image": "https://i.ytimg.com/vi/rOqvZv6lBPw/maxresdefault.jpg",
+        "url": "https://www.youtube.com/watch?v=-chpgaUD1lQ"
+    },
+    {
+        "title": "Jani me Fasule",
+        "description": "Jani me Fasule është një pjatë e thjeshtë dhe e shijshme e përgatitur me fasule të ziera dhe miell misri.",
+        "image": "https://www.plantbasedredhead.com/wp-content/uploads/2021/01/Jani-me-Fasule_Albanian-white-bean-soup_Albanische-weise-Bohnensuppe-_plantbasedredhead.com_1.jpg",
+        "url": "https://www.albanianrecipes.com/jani-me-fasule-recipe/"
+    },
+    {
+        "title": "Tavë Elbasani",
+        "description": "Tavë Elbasani është një pjatë tradicionale që kombinon mishin e pjekur me oriz dhe domate.",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6gyOlzoluYmNj6yvKUYEkEnd5Rr66PBUnXVqYouK6Jg&s",
+        "url": "https://www.youtube.com/watch?v=yoGmowLn3dM"
+    },
+    {
+        "title": "Kos me Arra",
+        "description": "Kos me Arra është një ëmbëlsirë tradicionale që përfshin kosin e bërë me mjaltë dhe arra të grira.",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBwv0CuSgFJrzs7oJleF9x727ezbqCpb0IBU2HSKbueQ&s",
+        "url": "https://www.youtube.com/watch?v=I0qMaFvfv_0"
+    },
+    {
+        "title": "Pite me Spinaq",
+        "description": "Pite me Spinaq është një pjatë e shijshme e përgatitur me spinaq të skuqur dhe miell te pergatitur mire .",
+        "image": "https://www.pergatit.com/wp-content/uploads/2016/09/Screenshot_7.png",
+        "url": "https://www.youtube.com/watch?v=Ub3t2ec5Fao"
+    },
+    {
+        "title": "Tavë Dheu me Perime",
+        "description": "Tavë Dheu me Perime është një pjatë tradicionale që kombinon mishin e pjekur me perime të ndryshme.",
+        "image": "https://i.ytimg.com/vi/eUeBi_kZ5lo/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDUspsE_eI5mHIhc8v4Tab6Po5Ssg",
+        "url": "https://www.youtube.com/watch?v=RpG7rmxEdoU"
+    },
+    {
+        "title": "Speca të Mbushur me Oriz dhe Djathë",
+        "description": "Speca të Mbushur me Oriz dhe Djathë janë një pjatë  e shëndetshme e përgatitur me speca të mbushur me oriz dhe djathë.",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSlyfVcKeMTKTLPZugIghPVaU81VzqVcHM9N4IgVFFjA&s",
+        "url": "https://www.youtube.com/watch?v=aZ5Wh7da6fE"
+    },
+    {
+        "title": "Pule me Oriz dhe Patate",
+        "description": "Pule me Oriz dhe Patate është një pjatë e shijshme dhe e thjeshtë e përgatitur me pule të pjekur, oriz dhe patate.",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQShjyZ9OmFYcQgp0SYyApi_U9CwQelLKSWnzsSRJLY1A&s",
+        "url": "https://www.youtube.com/watch?v=dd_UToEPlyo"
+    },
+    {
+        "title": "Pita",
+        "description": "Pita është një pjatë e zakonshme shqiptare e përgatitur me mish të pjekur, oriz dhe perime.",
+        "image": "https://assets.unileversolutions.com/recipes-v2/216403.jpg",
+        "url": "https://www.youtube.com/watch?v=NPiA69p4gqE"
+    },
+    {
+        "title": "Petulla",
+        "description": "Petulla është një ëmbëlsirë tradicionale shqiptare e përgatitur me miell, kos dhe sheqer.",
+        "image": "https://i.pinimg.com/736x/38/ce/13/38ce13a63070f455917b041465207ca3.jpg",
+        "url": "https://www.youtube.com/watch?v=l9TnYeyg6Os"
+    },
+    {
+    "title": "Qifqi",
+    "description": "Qifqi është një pjatë tradicionale shqiptare e përgatitur me oriz të skuqur, vezë dhe djathë.",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxq6FIlyrpiVcHXPVREkjyC-sc0gI6-gIcijthH2yLIA&s",
+    "url": "https://www.youtube.com/watch?v=LePC99JPbNQ"
+}
+
+
+]
+
+
+@app.route('/recipes/sugjerime')
+def sugjerime():
+    return render_template('sugjerime.html', recipes=recipes)
+
+@app.route('/search')
+def search():
+    query = request.args.get('query')
+    if query:
+        # Filter recipes based on the search query
+        filtered_recipes = [recipe for recipe in recipes if query.lower() in recipe['title'].lower()]
+        return render_template('sugjerime.html', recipes=filtered_recipes)
+    else:
+        # If no query is provided, show all recipes
+        return render_template('sugjerime.html', recipes=recipes)
+

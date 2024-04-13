@@ -43,7 +43,7 @@
 						</li>
 
 						<li>
-							<a class="tag_menu active_tab " href="/about">ABOUT</a>
+							<a class="tag_menu  " href="/about">ABOUT</a>
 						</li>
 
 						<li>
@@ -59,11 +59,11 @@
 						</li>
 
 						<li>
-                            <a class="tag_menu " href="/recipes/sugjerime">SUGJERIME</a>
+                            <a class="tag_menu active_tab " href="/recipes/sugjerime">SUGJERIME</a>
                         </li>
 
 						<li class="dropdown">
-							<a class="tag_menu" href="#" data-toggle="dropdown" role="button"
+							<a class="tag_menu" href="/recipes/sugjerime" data-toggle="dropdown" role="button"
 								aria-expanded="false">MORE<span class="caret"></span></a>
 							<ul class="dropdown-menu drop_1" role="menu">
 								<li><a href="/">Home</a></li>
@@ -91,7 +91,7 @@
 
 				<div id="sidebar-wrapper" class="">
 					<ul class="sidebar-nav">
-						<a id="menu-close" href="#" class="btn btn-default btn-lg pull-right toggle"><i
+						<a id="menu-close" href="/recipes/sugjerime" class="btn btn-default btn-lg pull-right toggle"><i
 								class="fa fa-remove"></i></a>
 						<li class="sidebar-brand">
 							<a class="heading_tag" href="/">With Love</a>
@@ -101,7 +101,7 @@
 						</li>
 
 						<li>
-							<a class="tag_menu active_tab" href="/about">ABOUT</a>
+							<a class="tag_menu" href="/about">ABOUT</a>
 						</li>
 
 						<li>
@@ -117,7 +117,7 @@
 						</li>
 
 						<li>
-                            <a class="tag_menu " href="/recipes/sugjerime">SUGJERIME</a>
+                            <a class="tag_menu active_tab" href="/recipes/sugjerime">SUGJERIME</a>
                         </li>
 
 						<li class="dropdown">
@@ -136,68 +136,35 @@
 		</div>
 	</section>
 
-	<section id="about">
-		<div class="menu_1 clearfix text-center">
-			<h1>About Recipes</h1>
-		</div>
-		<div class="menu_2 clearfix">
-			<div class="col-sm-6 space_all">
-				<div class="menu_2_left">
-					<img src="/static/img/31.jpg" width="100%" height="600px">
-				</div>
-			</div>
-			<div class="col-sm-6 space_all">
-				<div class="menu_2_right about_menu_right clearfix">
-					<h1><a href="#">Discover the Art of Cooking</a></h1>
-					<h2 class="heading_tag">Explore the World of Flavors</h2>
-					<p> Welcome to our culinary journey! Dive into the rich and diverse world of recipes, where every
-						dish tells a story. Whether you're a seasoned chef or a kitchen novice, there's always something
-						new to learn and explore. From classic comfort foods to exotic international cuisines, let your
-						taste buds be your guide.</p>
-				</div>
-			</div>
-		</div>
-	</section>
 
-	<section id="about_middle">
-		<div class="container">
-			<div class="row">
-				<div class="about_middle clearfix text-center">
-					<h1>Traditional Albanian Cuisine</h1>
-				</div>
-				<div class="about_middle_1 clearfix">
-					<div class="col-sm-4">
-						<div class="about_middle_1_inner clearfix">
-							<h3>Tavë Kosi</h3>
-							<p> Tavë Kosi is a delicious Albanian dish made with tender lamb or goat meat, baked in a
-								creamy yogurt sauce flavored with garlic and fresh herbs. It's a comforting and hearty
-								dish that's perfect for sharing with family and friends.</p>
-						</div>
-					</div>
-					<div class="col-sm-4">
-						<div class="about_middle_1_inner clearfix">
-							<h3>Fërgesë</h3>
-							<p>Fërgesë is a traditional Albanian dish made with peppers, tomatoes, and cottage cheese,
-								all cooked together to create a rich and flavorful stew. It's often served with crusty
-								bread for a satisfying and hearty meal.</p>
-						</div>
-					</div>
-					<div class="col-sm-4">
-						<div class="about_middle_1_inner clearfix">
-							<h3>Byrek</h3>
-							<p>Byrek is a popular Albanian pastry filled with layers of flaky dough and a variety of
-								savory fillings, such as cheese, spinach, or meat. It's a versatile dish that can be
-								enjoyed as a snack, appetizer, or even a main course.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-
-
-	<section id="contact_home" class="clearfix">
+    <section id="menu" class="clearfix">
+        <div class="container">
+            <div class="search-form">
+                <form action="/search" method="GET">
+                    <input type="text" name="query" placeholder="Search recipes...">
+                    <button type="submit">Search</button>
+                </form>
+            </div>
+            <div class="recipe-list row">
+                <!-- Loop through recipes -->
+                {% for recipe in recipes %}
+                    <div class="col-md-4">
+                        <div class="recipe">
+                            <h2>{{ recipe.title }}</h2>
+                            <p>{{ recipe.description }}</p>
+                            <img src="{{ recipe.image }}" alt="{{ recipe.title }}">
+                            <a href="{{ recipe.url }}" target="_blank">Shiko recetën</a>
+                        </div>
+                    </div>
+                    {% if loop.index % 3 == 0 %}
+                        </div><div class="recipe-list row">
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    
+    <section id="contact_home" class="clearfix">
 		<div class="contact_home clearfix">
 			<div class="col-sm-6 space_all">
 				<div class="contact_home_left">
@@ -235,28 +202,82 @@
 			<div class="row">
 				<div class="col-sm-12">
 					<div class="footer text-center">
-						<p> © 2024 With Love. All Rights Reserved .</p>
+						<p> © 2024 With Love. All Rights Reserved </p>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
-
-	<script src="js/classie.js"></script>
-
-	<script src="js/cbpAnimatedHeader.js"></script>
-
-	<script type="text/javascript">
-		$("#menu-close").click(function (e) {
-			e.preventDefault();
-			$("#sidebar-wrapper").toggleClass("active");
-		});
-		$("#menu-toggle").click(function (e) {
-			e.preventDefault();
-			$("#sidebar-wrapper").toggleClass("active");
-		});
-	</script>
-
+    <script src="/static/js/jquery-2.1.1.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <style>
+        /* Add custom styles here */
+        .recipe-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 20px;
+        }
+        .recipe {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .recipe h2 {
+            margin-top: 0;
+        }
+        .recipe p {
+            margin-bottom: 10px;
+        }
+        .recipe img {
+            width: 315px;
+            height: 315px;
+            border-radius: 5px;
+        }
+        .recipe a {
+            display: block;
+            text-align: center;
+            padding: 8px 15px;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .recipe a:hover {
+            background-color: #0056b3;
+        }
+        .menu_1 {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            /* Aligns items at each end of the container */
+            padding: 10px;
+            /* Add some padding for spacing */
+        }
+    
+        .search-form {
+            padding: 20px; /* Add some padding for spacing */
+            margin-bottom: 20px; /* Add margin to separate from the recipe list */
+            display: flex;
+            justify-content: center; /* Center the search form horizontally */
+        }
+        
+        .search-form input[type="text"] {
+            width: 300px; /* Adjust the width as needed */
+            margin-right: 10px; /* Add some space between input and button */
+        }
+    
+        .search-form button {
+            margin-left: 5px;
+            /* Add some space between input and button */
+        }
+    
+        h1 {
+            margin: 0;
+            /* Remove default margin for heading */
+        }
+    </style>
 </body>
-
 </html>
