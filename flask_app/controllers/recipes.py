@@ -346,7 +346,7 @@ def download_recipe(id):
 
     response = make_response(output.getvalue())
     response.headers['Content-Type'] = 'text/csv'
-    response.headers['Content-Disposition'] = f'attachment; filename={recipe['name']}.csv'
+    response.headers['Content-Disposition'] = f'attachment; filename="{recipe["name"]}.csv"'
     return response
 
 @app.route('/about')
