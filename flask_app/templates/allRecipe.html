@@ -2,162 +2,139 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Nutrient</title>
-    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/static/css/style.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/static/css/font-awesome.min.css" />
-    <link href="/static/css/element.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Geostar+Fill|Leckerli+One|Montez" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet">
-    <script src="/static/js/jquery-2.1.1.min.js"></script>
-    <script src="/static/js/bootstrap.min.js"></script>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Nutrient</title>
+	<link href="/static/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/static/css/style.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="/static/css/font-awesome.min.css" />
+	<link href="/static/css/element.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Geostar+Fill|Leckerli+One|Montez" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet">
+	<script src="/static/js/jquery-2.1.1.min.js"></script>
+	<script src="/static/js/bootstrap.min.js"></script>
+	<script src="./js/ekko-lightbox.js"></script>
 
 
 </head>
-<style>
-    .menu_1 {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        /* Aligns items at each end of the container */
-        padding: 10px;
-        /* Add some padding for spacing */
-    }
-
-    .search-form {
-        justify-content: flex-start;
-        padding: 5px;
-        /* Add padding for spacing */
-        display: flex;
-        /* Use flexbox layout for the form elements */
-        align-items: center;
-        /* Align form elements vertically */
-    }
-
-    .search-form .form-control {
-        border: none;
-        /* Remove default input border */
-    }
-
-    .search-form button {
-        margin-left: 5px;
-        /* Add some space between input and button */
-    }
-
-    h1 {
-        margin: 0;
-        /* Remove default margin for heading */
-    }
-</style>
 
 <body>
-    <section id="header" class="header_menu">
-        <nav class="navbar navbar-default navbar-fixed-top">
-            <div class="container">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header page-scroll">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse"
-                        data-target="#bs-example-navbar-collapse-1">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand heading_tag" href="/">With Love </a>
+	<section id="header" class="header_menu">
+		<nav class="navbar navbar-default navbar-fixed-top">
+			<div class="container">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header page-scroll">
+					<button type="button" class="navbar-toggle" data-toggle="collapse"
+						data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand heading_tag" href="/">With Love </a>
+				</div>
 
-                </div>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav navbar-right">
+						<li>
+							<a class="tag_menu " href="/">HOME</a>
+						</li>
 
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li>
-                            <a class="tag_menu" href="/">HOME</a>
-                        </li>
-                        <li>
-                            <a class="tag_menu" href="/about">ABOUT</a>
-                        </li>
-                        <li>
-                            <a class="tag_menu" href="/favourite">FAVOURITE</a>
-                        </li>
-                        <li>
-                            <a class="tag_menu active_tab" href="/all/recipes">RECIPES</a>
-                        </li>
-                        <li>
-                            <a class="tag_menu" href="/recipes/new">ADD RECIPE</a>
-                        </li>
-                        <li>
-                            <a class="tag_menu" href="/contact">CONTACT</a>
-                        </li>
-                        <li class="dropdown">
-                            <a class="tag_menu" href="#" data-toggle="dropdown" role="button"
-                                aria-expanded="false">MORE<span class="caret"></span></a>
-                            <ul class="dropdown-menu drop_1" role="menu">
-                                <li><a href="/">Home</a></li>
-                                <li><a href="/all/recipes">Recipes</a></li>
-                                <li><a href="/logout">Logout</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </section>
+						<li>
+							<a class="tag_menu " href="/about">ABOUT</a>
+						</li>
 
+						<li>
+							<a class="tag_menu" href="/favourite">FAVOURITE</a>
+						</li>
 
+						<li>
+							<a class="tag_menu active_tab" href="/all/recipes">RECIPES</a>
+						</li>
 
+						<li>
+							<a class="tag_menu" href="/recipes/new">ADD RECIPE</a>
+						</li>
 
-    <section id="header" class="header_menu">
-        <nav class="navbar navbar-default navbar-fixed-top">
-            <div class="container">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header page-scroll">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse"
-                        data-target="#bs-example-navbar-collapse-1">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand heading_tag" href="/">With Love </a>
-                </div>
-                
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li>
-                            <a class="tag_menu" href="/">HOME</a>
+						<li>
+                            <a class="tag_menu " href="/recipes/sugjerime">SUGJERIME</a>
                         </li>
-                        <li>
-                            <a class="tag_menu" href="/about">ABOUT</a>
+
+						<li class="dropdown">
+							<a class="tag_menu" href="#" data-toggle="dropdown" role="button"
+								aria-expanded="false">MORE<span class="caret"></span></a>
+							<ul class="dropdown-menu drop_1" role="menu">
+								<li><a href="/">Home</a></li>
+								<li><a href="/all/recipes">Recipes</a></li>
+								<li><a href="/logout">Logout</a></li>
+							</ul>
+						</li>
+
+					</ul>
+
+				</div>
+				<!-- /.navbar-collapse -->
+			</div>
+			<!-- /.container-fluid -->
+		</nav>
+	</section>
+
+	<section id="header_mini">
+		<div class="container">
+			<div class="row">
+				<div class="header_mini clearfix">
+					<h1><a class="heading_tag" href="/">With Love</a></h1>
+				</div>
+				<a id="menu-toggle" href="#" class="btn btn-warning btn-lg toggle"><i class="fa fa-toggle-on"></i></a>
+
+				<div id="sidebar-wrapper" class="">
+					<ul class="sidebar-nav">
+						<a id="menu-close" href="#" class="btn btn-default btn-lg pull-right toggle"><i
+								class="fa fa-remove"></i></a>
+						<li class="sidebar-brand">
+							<a class="heading_tag" href="/">With Love</a>
+						</li>
+						<li>
+							<a class="tag_menu " href="/">HOME</a>
+						</li>
+
+						<li>
+							<a class="tag_menu" href="/about">ABOUT</a>
+						</li>
+
+						<li>
+							<a class="tag_menu" href="/favourite">FAVOURITE</a>
+						</li>
+
+						<li>
+							<a class="tag_menu active_tab" href="/all/recipes">RECIPES</a>
+						</li>
+
+						<li>
+							<a class="tag_menu" href="/recipes/new">ADD RECIPE</a>
+						</li>
+
+						<li>
+                            <a class="tag_menu " href="/recipes/sugjerime">SUGJERIME</a>
                         </li>
-                        <li>
-                            <a class="tag_menu" href="/favourite">FAVOURITE</a>
-                        </li>
-                        <li>
-                            <a class="tag_menu active_tab" href="/all/recipes">RECIPES</a>
-                        </li>
-                        <li>
-                            <a class="tag_menu" href="/recipes/new">ADD RECIPE</a>
-                        </li>
-                        <li>
-                            <a class="tag_menu" href="/contact">CONTACT</a>
-                        </li>
-                        <li class="dropdown">
-                            <a class="tag_menu" href="#" data-toggle="dropdown" role="button"
-                                aria-expanded="false">MORE<span class="caret"></span></a>
-                            <ul class="dropdown-menu drop_1" role="menu">
-                                <li><a href="/">Home</a></li>
-                                <li><a href="/all/recipes">Recipes</a></li>
-                                <li><a href="/logout">Logout</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </section>
+
+						<li class="dropdown">
+							<a class="tag_menu" href="#" data-toggle="dropdown" role="button"
+								aria-expanded="false">MORE<span class="caret"></span></a>
+							<ul class="dropdown-menu drop_1" role="menu">
+								<li><a href="/">Home</a></li>
+								<li><a href="/all/recipes">Recipes</a></li>
+								<li><a href="/logout">Logout</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+
+			</div>
+		</div>
+	</section>
 
 
     <section id="menu" class="clearfix">
@@ -283,5 +260,40 @@
     </script>
 
 </body>
+<style>
+    .menu_1 {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        /* Aligns items at each end of the container */
+        padding: 10px;
+        /* Add some padding for spacing */
+    }
+
+    .search-form {
+        justify-content: flex-start;
+        padding: 5px;
+        /* Add padding for spacing */
+        display: flex;
+        /* Use flexbox layout for the form elements */
+        align-items: center;
+        /* Align form elements vertically */
+    }
+
+    .search-form .form-control {
+        border: none;
+        /* Remove default input border */
+    }
+
+    .search-form button {
+        margin-left: 5px;
+        /* Add some space between input and button */
+    }
+
+    h1 {
+        margin: 0;
+        /* Remove default margin for heading */
+    }
+</style>
 
 </html>
